@@ -6,31 +6,31 @@ import { apiSlice } from './api/apiSlice'
 import authReducer from './features/authSlice'
 
 const rootReducer = combineReducers({
-    auth: authReducer,
-    [apiSlice.reducerPath] : apiSlice.reducer,
-})
+  [apiSlice.reducerPath]: apiSlice.reducer,
+  auth: authReducer,
+});
 
 const persistConfig = {
-    key: 'root',
-    storage,
-    whitelist:['auth'],
-}
+  key: "root",
+  storage,
+  whitelist: ["auth"],
+};
 
-const persistedReducer = persistReducer(persistConfig, rootReducer)
+const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 const store = configureStore({
-    reducer: persistedReducer,
-    middleware: (getDefaultMiddleware) =>
-        getDefaultMiddleware({
-            serializableCheck: {
-                ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-            }
-        }).concat([apiSlice.middleware]),
-    devTools: true
-})
+  reducer: persistedReducer,
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
+    }).concat([apiSlice.middleware]),
+  devTools: true,
+});
 
-export const persistor = persistStore(store)
+export const persistor = persistStore(store);
 
-setupListeners(store.dispatch)
+setupListeners(store.dispatch);
 
-export default store;
+export { store };
