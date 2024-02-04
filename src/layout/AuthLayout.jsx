@@ -2,16 +2,15 @@ import { siteContent } from '@/config/site-content';
 import React from 'react'
 import { Link } from "react-router-dom";
 import { Outlet } from "react-router-dom";
-import logo from '@/assets/Icon.png'
+import logo from "@/assets/logo.png";
 
 const AuthLayout = () => {
   return (
-    <div className="h-screen flex">
+    <div className="h-screen flex main-container">
       {/* Page content */}
       <div className="lg:w-1/2 w-full h-full relative">
         <Link to="/" className="p-4 absolute top-4 left-4 inline-flex">
-          <img src={logo} alt="" className="w-10 inline-block items-center" />
-          <span className="text-3xl font-bold text-black  px-3">{siteContent.businessName}</span>
+          <img src={logo} alt="" className="w-[80px] inline-block items-center" />
         </Link>
 
         <div className="absolute left-1/2  p-8 transform -translate-x-1/2 mt-20 w-full flex justify-center">

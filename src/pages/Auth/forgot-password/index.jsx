@@ -5,8 +5,15 @@ import { useForm } from 'react-hook-form'
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { useForgotPasswordMutation } from '@/store/apis/auth.api';
+import ErrorMessageAlert from '@/components/ErrorMessageAlert';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const index = () => {
+  const [forgotPassword, { isLoading, error }] = useForgotPasswordMutation();
+  const location = useLocation();
+  const navigate = useNavigate();
+  const from = location.state?.from || { pathname: "/auth/forgot_password_template" };
     const form = useForm({
         resolver: yupResolver(EmailValidationSchema),
         defaultValues: {
@@ -16,15 +23,17 @@ const index = () => {
     })
 
     async function onSubmit(values) {
-        console.log(values)
+      await forgotPassword(values).unwrap().then(() => {
+        navigate(from, { replace: true });
+        })
     }
   return (
-    <div className="flex flex-col justify-center items-center w-full">
+    <div className="flex flex-col justify-center items-center w-4/5">
       <div className="my-5  w-full">
         <h1 className="text-2xl font-semibold">Forgot Password?</h1>
         <p className="text-base ">Recover your account by resetting your password.</p>
       </div>
-
+<ErrorMessageAlert error={error}/>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 w-full">
           <FormField
@@ -40,7 +49,7 @@ const index = () => {
               </FormItem>
             )}
           />
-            <Button type="submit">Recover</Button>
+            <Button type="submit" disable={isLoading}>Recover</Button>
         </form>
       </Form>
     </div>

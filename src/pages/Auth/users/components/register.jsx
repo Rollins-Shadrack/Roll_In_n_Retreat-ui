@@ -6,9 +6,16 @@ import google from "@/assets/google.svg";
 import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Link } from "react-router-dom";
+import { useRegisterMutation } from "@/store/apis/auth.api";
+import ErrorMessageAlert from "@/components/ErrorMessageAlert";
+import { useLocation, useNavigate } from "react-router-dom";
+import { UserPlus } from "lucide-react";
 
 const register = () => {
+  const [register, { isLoading, error }] = useRegisterMutation()
+  const location = useLocation();
+  const from = location.state?.from || { pathname: "/auth/confirmation-template" };
+  const navigate = useNavigate();
   const form = useForm({
     resolver: yupResolver(UserAuthRegisterSchema),
     defaultValues: {
@@ -21,18 +28,22 @@ const register = () => {
   });
 
   async function onSubmit(values) {
-    console.log(values);
+    await register(values).unwrap().then((response) => {
+      navigate(from, {replace:true})
+    }).catch(error => {
+      console.log(error);
+    })
   }
   return (
     <>
       <div className="w-full">
-        <div className="flex flex-col items-center">
+        <div className="lg:flex flex-col items-center">
           <div className="mt-5 mb-3 w-full">
             <h1 className="text-2xl font-semibold">Let's Get Started!</h1>
             <p className="text-base ">Join us to unlock exclusive benefits and start booking your hotel stays</p>
           </div>
 
-          <div className="border my-2 border-black px-10 py-1 flex justify-between w-full  items-center rounded-xl">
+          <div className="border my-2 border-black px-5 py-1 flex justify-between w-full  items-center rounded-xl">
             <img src={google} alt="" className="w-8 inline-block items-center" />
             <div className="mx-auto">
               <h1 className="text-base font-semibold">Sign up with Google</h1>
@@ -40,11 +51,11 @@ const register = () => {
           </div>
 
           <div class=" my-2 text-base  font-medium">or sign up with email</div>
-
+          <ErrorMessageAlert error={error} />
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 w-full">
-              <div className="flex space-x-3">
-                <div className="w-1/2">
+              <div className="md:flex md:space-x-3">
+                <div className="md:w-1/2 w-full">
                   <FormField
                     control={form.control}
                     name="firstName"
@@ -60,7 +71,7 @@ const register = () => {
                   />
                 </div>
 
-                <div className="w-1/2">
+                <div className="lg:w-1/2 w-full">
                   <FormField
                     control={form.control}
                     name="lastName"
@@ -105,7 +116,10 @@ const register = () => {
               />
 
               <div className="flex justify-between items-center">
-                <Button type="submit">Sign Up</Button>
+                <Button variant="outline" type="submit" disable={isLoading}>
+                  Sign Up
+                  <UserPlus className="ml-2 h-4 w-4" />
+                </Button>
               </div>
             </form>
           </Form>

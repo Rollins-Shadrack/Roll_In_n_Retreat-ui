@@ -34,9 +34,9 @@ export const footerContent = {
     heading: "Get in Touch",
     description: "Feel free to reach out to us for any inquiries, questions, or assistance you may need",
     address: {
-      street: "123 Barber Street, Salon City",
+      street: "123 Hotel Street, Hotel City",
       phone: "074-617-9246",
-      website: "https://barbersalon.com",
+      website: "",
     },
   },
   copyright: {

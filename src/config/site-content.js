@@ -1,7 +1,7 @@
 export const siteContent = {
   businessName: "Roll In & Retreat",
   description: "Roll In & Retreat is a platform for hotel owners and clients to connect.",
-  slogan: "Discover. Book. Reserve.",
+  slogan: "Your Stay, Your Say",
   logoImgUrl: "",
   logoAlt: "Roll In & Retreat",
   supportEmail: "support@rollinscodes.com",
@@ -27,7 +27,7 @@ export const siteContent = {
       title: "Welcome Back!",
       subTitle: "Enter your credentials to access your business account.",
       featureImage:
-        "https://www.istockphoto.com/photo/beachfront-bungalow-with-sea-view-gm1198357641-342458738?phrase=hotels%20and%20resorts&searchscope=image%2Cfilm",
+        "https://media.istockphoto.com/id/509553708/photo/tropical-modern-villa-exterior.jpg?s=612x612&w=0&k=20&c=rMmOmihiXHl6htuhYVzbfPdKAawYHFuNMhD32A0sWUg=",
       featureImageAlt: "Roll In & Retreat",
     },
     confirmMailTemplate: {

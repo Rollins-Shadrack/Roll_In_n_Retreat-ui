@@ -1,13 +1,13 @@
-import { combineReducers, configureStore } from '@reduxjs/toolkit'
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { setupListeners } from "@reduxjs/toolkit/query/react";
-import { persistReducer, persistStore, FLUSH, PAUSE, PERSIST, PURGE, REGISTER, REHYDRATE } from 'redux-persist'
-import storage from 'redux-persist/lib/storage'
-import { apiSlice } from './api/apiSlice'
-import authReducer from './features/authSlice'
+import { persistReducer, persistStore, FLUSH, PAUSE, PERSIST, PURGE, REGISTER, REHYDRATE } from "redux-persist";
+import storage from "redux-persist/lib/storage";
+import authSlice from "./features/authSlice";
+import { apiSlice } from "./apis/apiSlice";
 
 const rootReducer = combineReducers({
+  auth: authSlice,
   [apiSlice.reducerPath]: apiSlice.reducer,
-  auth: authReducer,
 });
 
 const persistConfig = {
@@ -25,12 +25,12 @@ const store = configureStore({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
-    }).concat([apiSlice.middleware]),
-  devTools: true,
+    }).concat(apiSlice.middleware),
+  devTools: process.env.NODE_ENV !== "production",
 });
 
 export const persistor = persistStore(store);
 
 setupListeners(store.dispatch);
 
-export { store };
+export default store;

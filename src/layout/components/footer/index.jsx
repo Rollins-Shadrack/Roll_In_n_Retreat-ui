@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "@/assets/Icon.png";
+import logo from "@/assets/logo.png";
 import { footerContent } from "@/layout/constants/footer";
 import { ChevronRight, MapPin, PhoneCall, Instagram, Facebook, Twitter } from "lucide-react";
 
@@ -11,14 +11,14 @@ const index = () => {
         <div className="block lg:flex gap-20 mb-10 pb-10">
           <div className="w-full lg:w-4/12 mb-10 lg:mb-0">
             <Link href="/" className="mb-4 inline-block">
-              <img src={logo} alt="" className="w-10 inline-block items-center" /> <span className="text-[#263238]">Roll In & Retreat </span>
+              <img src={logo} alt="" className="w-[100px] inline-block items-center" /> <span className="text-[#263238] font-bold">Roll In & Retreat </span>
             </Link>
             <p className="leading-relaxed mb-7 text-base">{footerContent.about.description}</p>
             <p>
               <Link href={footerContent.about.cta.href} className="flex space-x-2 outline-none items-center font-semibold text-primary">
                 <span>{footerContent.about.cta.label}</span>
-                <span className="w-6 h-6 rounded-full bg-primary text-white inline-flex items-center justify-center">
-                  <ChevronRight className="text-white" />
+                <span className="w-6 h-6 rounded-full bg-primary inline-flex items-center justify-center">
+                  <ChevronRight className="" />
                 </span>
               </Link>
             </p>

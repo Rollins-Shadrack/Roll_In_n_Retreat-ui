@@ -2,24 +2,22 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { UserAuthLoginSchema } from "@/lib/validations/AuthSchema";
-import google from "@/assets/google.svg";
 import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Link } from "react-router-dom";
-import { useLoginMutation } from "@/store/apis/auth.api";
 import { useDispatch } from "react-redux";
-import { setCredentials } from "@/store/features/authSlice";
 import { useLocation, useNavigate } from "react-router-dom";
+import { Eye, EyeOff } from "lucide-react";
+import { useLoginPartnerMutation } from "@/store/apis/auth.api";
 import ErrorMessageAlert from "@/components/ErrorMessageAlert";
-import { Eye, EyeOff, LogIn } from "lucide-react";
 
 const login = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
-  const [login, { isLoading, error }] = useLoginMutation();
+  const [login, { isLoading, error }] = useLoginPartnerMutation();
   const dispatch = useDispatch();
   const location = useLocation();
-  const from = location.state?.from || { pathname: "/" };
+  const from = location.state?.from || { pathname: "/dashboard" };
   const navigate = useNavigate();
   const form = useForm({
     resolver: yupResolver(UserAuthLoginSchema),
@@ -46,21 +44,17 @@ const login = () => {
     }
   }
   return (
-    <div className="w-full">
+    <div className="w-4/5">
       <div className="flex flex-col items-center">
-        <div className="my-5 w-full">
-          <h1 className="text-2xl font-semibold">Welcome Back!</h1>
-          <p className="text-sm ">Sign in to make reservations and manage your hotel bookings.</p>
-        </div>
-
-        <div className="border border-black px-5 py-1 flex justify-between w-full  items-center rounded-xl">
-          <img src={google} alt="" className="w-6 inline-block items-center" />
-          <div className="mx-auto">
-            <h1 className="text-base font-semibold">Continue with Google</h1>
+        <div className="my-5 w-full flex justify-between items-center">
+          <div className="">
+            <h1 className="text-2xl font-semibold">Welcome Back!</h1>
+            <p className="text-base ">Sign in to access your account</p>
           </div>
+          <Link to="/onboard/register" className="text-lg font-semibold">
+            Create Account
+          </Link>
         </div>
-
-        <div class="my-3 text-base  font-medium">or sign in with email</div>
         <ErrorMessageAlert error={error} />
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 w-full">
@@ -99,7 +93,6 @@ const login = () => {
             <div className="flex justify-between items-center">
               <Button variant="outline" type="submit" disabled={isLoading}>
                 Login
-                <LogIn className="ml-2 h-4 w-4" />
               </Button>
               <Link to="/auth/forgot_password" className="font-medium">
                 Forgot Password
