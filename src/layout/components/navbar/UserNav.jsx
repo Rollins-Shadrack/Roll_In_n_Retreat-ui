@@ -35,7 +35,7 @@ const UserNav = ({ user }) => {
     <div>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <Button variant="outline">
+          <Button variant="outline" className="bg-brandSunset text-brandFog">
             {user ? (
               <Avatar className="h-10 w-10">
                 <AvatarImage

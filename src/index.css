@@ -35,8 +35,8 @@
     --radius: 0.5rem;
     /* custom */
     --primary: transparent;
-    --secondary: #c2b7e1;
-    --tertiary: #c2b7e1;
+    --secondary: #935430;
+    --tertiary: #935430;
   }
 
   .dark {
@@ -73,11 +73,13 @@
 @layer base {
   * {
     scrollbar-width: thin;
+
     scrollbar-color: var(--secondary) var(--primary);
   }
 
   *::-webkit-scrollbar {
-    width: 13px;
+    width: 10px;
+
   }
 
   *::-webkit-scrollbar-track {
@@ -100,6 +102,16 @@
     nav {
       max-width: 1600px;
       margin: 0 auto;
+    }
+  }
+
+  @variants responsive {
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+    .no-scrollbar {
+        -ms-overflow-style: none;  
+        scrollbar-width: none;  
     }
   }
 }

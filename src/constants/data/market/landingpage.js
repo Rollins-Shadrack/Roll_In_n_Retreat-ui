@@ -1,0 +1,535 @@
+export const heroImages = [
+  "https://media.istockphoto.com/id/1477523496/photo/happy-young-asian-traveler-woman-relax-on-bed-in-hotel-room-travel-alone-summer-and-holiday.jpg?s=612x612&w=0&k=20&c=a_Q1Z0t0FfNWy7hXINpKuutrSLrCDLa3XgwlWh6PKio=",
+  "https://media.istockphoto.com/id/1484810650/photo/young-diverse-friends-having-fun-time-at-luxury-hotel-reception-on-check-in-time-travel-life.jpg?s=612x612&w=0&k=20&c=-4F9ZMeMjta3RZpQIxyOS3-vF0m_AHchCc8gc7swVcA=",
+  "https://media.istockphoto.com/id/1428092595/photo/happy-child-takes-hotel-room-key-at-reception.jpg?s=612x612&w=0&k=20&c=pxVihZe5qDQwDiVJI5W3Xk2EPPaMc2YBf65mmegDCas=",
+  "https://media.istockphoto.com/id/1300988656/photo/portrait-of-family-with-young-son-having-fun-on-summer-vacation-splashing-in-outdoor-swimming.jpg?s=612x612&w=0&k=20&c=mhsCBpbh1ddisHdcGef7HCMim8G2Hx5XThVYECScz9g=",
+  "https://media.istockphoto.com/id/1136247293/photo/child-with-mother-in-swimming-pool-holiday-resort.jpg?s=612x612&w=0&k=20&c=zAFudOmgoSbmvitRn-Xi1h1hyvhUyjF-OWWpkFidPS0=",
+  "https://plus.unsplash.com/premium_photo-1675745329954-9639d3b74bbf?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aG90ZWx8ZW58MHx8MHx8fDA%3D",
+  "https://images.unsplash.com/photo-1563911302283-d2bc129e7570?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGhvdGVsfGVufDB8fDB8fHww",
+  "https://media.istockphoto.com/id/1279691910/photo/happy-family-of-four-in-outdoors-swimming-pool.jpg?s=612x612&w=0&k=20&c=xeF1XZQoUpHGGLhOMLLTyByz9GNAzgh9MrFUibmB1nw=",
+  "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjN8fGhvdGVsfGVufDB8fDB8fHww",
+];
+
+export const featuredHotels = [
+  {
+    name: "Stare Miatro",
+    rating: "5.9",
+    img: "https://plus.unsplash.com/premium_photo-1661962964017-b985533e1f45?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8aG90ZWxzJTIwcm9vbXN8ZW58MHx8MHx8fDA%3D",
+    reviews: 2680,
+    type: "Apartment",
+    location: "Old Town, Poland",
+  },
+  {
+    name: "Leman Locke",
+    rating: "2.9",
+    img: "https://media.istockphoto.com/id/1300135335/photo/luxurious-bedroom-interior-at-nigh-with-messy-bed-leather-armchairs-closet-and-garden-view.jpg?s=612x612&w=0&k=20&c=3tFjNfMis-qELQ04hUmiG3W0i-5d7jBjaOP5YtB4sIw=",
+    reviews: 5680,
+    type: "Resorts",
+    location: "Tower Hamlets, UK",
+  },
+  {
+    name: "7 seasons Apartment",
+    rating: "3.7",
+    img: "https://media.istockphoto.com/id/1299710067/photo/double-bedroom-with-sea-view.jpg?s=612x612&w=0&k=20&c=LPNC-aqrsOsgxU8eqPcR38ACIOIjqAmh0VSKclIa2gs=",
+    reviews: 2880,
+    type: "Villas",
+    location: "CZech Republic, Praha",
+  },
+  {
+    name: "Stare Miatro",
+    rating: "4.9",
+    img: "https://media.istockphoto.com/id/1334117383/photo/3d-digital-rendering-of-a-luxury-hotel-suite.jpg?s=612x612&w=0&k=20&c=DfRDGXeTNwlZhiA0-ZTWaGI-4UfeivMN9ASAEDf06LQ=",
+    reviews: 4000,
+    type: "Apartment",
+    location: "Old Town, Poland",
+  },
+];
+export const cities = [
+  {
+    name: "London",
+  },
+  {
+    name: "Manchester",
+  },
+  {
+    name: "Birmingham",
+  },
+  {
+    name: "Liverpool",
+  },
+  {
+    name: "Leeds",
+  },
+  {
+    name: "Bristol",
+  },
+  {
+    name: "Nottingham",
+  },
+  {
+    name: "Sheffield",
+  },
+  {
+    name: "Glasgow",
+  },
+  {
+    name: "Leicester",
+  },
+  {
+    name: "Edinburgh",
+  },
+  {
+    name: "Cardiff",
+  },
+  {
+    name: "Coventry",
+  },
+  {
+    name: "Belfast",
+  },
+  {
+    name: "Stoke-on-Trent",
+  },
+  {
+    name: "Wolverhampton",
+  },
+  {
+    name: "Plymouth",
+  },
+  {
+    name: "Derby",
+  },
+];
+
+export const newsletterCards = [
+  {
+    stats: "17k+",
+    title: "Discover Events & Packages",
+    desc: "Stay updated on upcoming events, themed packages, and seasonal offers. Explore unique experiences and plan your stay around exciting happenings.",
+  },
+  {
+    stats: "1000+",
+    title: "Travel Tips & Destination Insights",
+    desc: "Receive travel tips, local insights, and recommendations to make the most of your visit. Discover hidden gems, popular attractions, and insider suggestions.",
+  },
+];
+
+export const testimonials = [
+  {
+    id: 1,
+    name: 'Lisa Miller',
+    title: 'User-Friendly Platform',
+    review:
+      "Booking hotels on this website is a breeze! The user interface is intuitive, and I appreciate the wide range of options available. It's my go-to platform for planning my travels.",
+    rating: 5,
+  },
+  {
+    id: 2,
+    name: 'Daniel Lee',
+    title: 'Effortless Booking Process',
+    review:
+      "I had a seamless experience booking a hotel through this website. The process was quick, and I could easily compare different options. The detailed information helped me make an informed choice.",
+    rating: 4,
+  },
+  {
+    id: 3,
+    name: 'Emily White',
+    title: 'Diverse Hotel Selection',
+    review:
+      "Whether I'm looking for a budget-friendly stay or a luxurious retreat, this website offers a diverse range of hotels. The variety ensures I can find the perfect accommodation for every trip.",
+    rating: 5,
+  },
+  {
+    id: 4,
+    name: 'Ryan Johnson',
+    title: 'Responsive Customer Support',
+    review:
+      "I had a query about my reservation, and the customer support team was quick to assist. Their responsiveness and helpfulness made me feel confident in using this platform for future bookings.",
+    rating: 4,
+  },
+  {
+    id: 5,
+    name: 'Sophie Turner',
+    title: 'Reliable Booking Platform',
+    review:
+      "I've used several hotel booking websites, and this one stands out for its reliability. The information is accurate, and the booking process is secure. I highly recommend it to fellow travelers.",
+    rating: 5,
+  },
+  {
+    id: 6,
+    name: 'Alex Parker',
+    title: 'Convenient Travel Planning',
+    review:
+      "Planning my trips has become so much more convenient with this website. The search filters and detailed hotel descriptions make it easy to find accommodations that suit my preferences and budget.",
+    rating: 4,
+  },
+];
+
+export const propertyType = {
+  Hotels: [
+    {
+      name: "7 seasons Apartment",
+      rating: "3.7",
+      img: "https://media.istockphoto.com/id/1299710067/photo/double-bedroom-with-sea-view.jpg?s=612x612&w=0&k=20&c=LPNC-aqrsOsgxU8eqPcR38ACIOIjqAmh0VSKclIa2gs=",
+      reviews: 2880,
+      type: "Villas",
+      location: "CZech Republic, Praha",
+    },
+    {
+      name: "Stare Miatro",
+      rating: "4.9",
+      img: "https://media.istockphoto.com/id/1334117383/photo/3d-digital-rendering-of-a-luxury-hotel-suite.jpg?s=612x612&w=0&k=20&c=DfRDGXeTNwlZhiA0-ZTWaGI-4UfeivMN9ASAEDf06LQ=",
+      reviews: 4000,
+      type: "Apartment",
+      location: "Old Town, Poland",
+    },
+    {
+      name: "Stare Miatro",
+      rating: "5.9",
+      img: "https://plus.unsplash.com/premium_photo-1661962964017-b985533e1f45?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8aG90ZWxzJTIwcm9vbXN8ZW58MHx8MHx8fDA%3D",
+      reviews: 2680,
+      type: "Apartment",
+      location: "Old Town, Poland",
+    },
+    {
+      name: "Leman Locke",
+      rating: "2.9",
+      img: "https://media.istockphoto.com/id/1300135335/photo/luxurious-bedroom-interior-at-nigh-with-messy-bed-leather-armchairs-closet-and-garden-view.jpg?s=612x612&w=0&k=20&c=3tFjNfMis-qELQ04hUmiG3W0i-5d7jBjaOP5YtB4sIw=",
+      reviews: 5680,
+      type: "Resorts",
+      location: "Tower Hamlets, UK",
+    },
+    {
+      name: "7 seasons Apartment",
+      rating: "3.7",
+      img: "https://media.istockphoto.com/id/1299710067/photo/double-bedroom-with-sea-view.jpg?s=612x612&w=0&k=20&c=LPNC-aqrsOsgxU8eqPcR38ACIOIjqAmh0VSKclIa2gs=",
+      reviews: 2880,
+      type: "Villas",
+      location: "CZech Republic, Praha",
+    },
+    {
+      name: "Stare Miatro",
+      rating: "4.9",
+      img: "https://media.istockphoto.com/id/1334117383/photo/3d-digital-rendering-of-a-luxury-hotel-suite.jpg?s=612x612&w=0&k=20&c=DfRDGXeTNwlZhiA0-ZTWaGI-4UfeivMN9ASAEDf06LQ=",
+      reviews: 4000,
+      type: "Apartment",
+      location: "Old Town, Poland",
+    },
+    {
+      name: "Leman Locke",
+      rating: "2.9",
+      img: "https://media.istockphoto.com/id/1300135335/photo/luxurious-bedroom-interior-at-nigh-with-messy-bed-leather-armchairs-closet-and-garden-view.jpg?s=612x612&w=0&k=20&c=3tFjNfMis-qELQ04hUmiG3W0i-5d7jBjaOP5YtB4sIw=",
+      reviews: 5680,
+      type: "Resorts",
+      location: "Tower Hamlets, UK",
+    },
+  ],
+  Apartment: [
+    {
+      name: "Stare Miatro",
+      rating: "5.9",
+      img: "https://plus.unsplash.com/premium_photo-1661962964017-b985533e1f45?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8aG90ZWxzJTIwcm9vbXN8ZW58MHx8MHx8fDA%3D",
+      reviews: 2680,
+      type: "Apartment",
+      location: "Old Town, Poland",
+    },
+    {
+      name: "Leman Locke",
+      rating: "2.9",
+      img: "https://media.istockphoto.com/id/1300135335/photo/luxurious-bedroom-interior-at-nigh-with-messy-bed-leather-armchairs-closet-and-garden-view.jpg?s=612x612&w=0&k=20&c=3tFjNfMis-qELQ04hUmiG3W0i-5d7jBjaOP5YtB4sIw=",
+      reviews: 5680,
+      type: "Resorts",
+      location: "Tower Hamlets, UK",
+    },
+    {
+      name: "7 seasons Apartment",
+      rating: "3.7",
+      img: "https://media.istockphoto.com/id/1299710067/photo/double-bedroom-with-sea-view.jpg?s=612x612&w=0&k=20&c=LPNC-aqrsOsgxU8eqPcR38ACIOIjqAmh0VSKclIa2gs=",
+      reviews: 2880,
+      type: "Villas",
+      location: "CZech Republic, Praha",
+    },
+    {
+      name: "Stare Miatro",
+      rating: "4.9",
+      img: "https://media.istockphoto.com/id/1334117383/photo/3d-digital-rendering-of-a-luxury-hotel-suite.jpg?s=612x612&w=0&k=20&c=DfRDGXeTNwlZhiA0-ZTWaGI-4UfeivMN9ASAEDf06LQ=",
+      reviews: 4000,
+      type: "Apartment",
+      location: "Old Town, Poland",
+    },
+  ],
+  Resorts: [
+    {
+      name: "Stare Miatro",
+      rating: "5.9",
+      img: "https://plus.unsplash.com/premium_photo-1661962964017-b985533e1f45?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8aG90ZWxzJTIwcm9vbXN8ZW58MHx8MHx8fDA%3D",
+      reviews: 2680,
+      type: "Apartment",
+      location: "Old Town, Poland",
+    },
+    {
+      name: "Leman Locke",
+      rating: "2.9",
+      img: "https://media.istockphoto.com/id/1300135335/photo/luxurious-bedroom-interior-at-nigh-with-messy-bed-leather-armchairs-closet-and-garden-view.jpg?s=612x612&w=0&k=20&c=3tFjNfMis-qELQ04hUmiG3W0i-5d7jBjaOP5YtB4sIw=",
+      reviews: 5680,
+      type: "Resorts",
+      location: "Tower Hamlets, UK",
+    },
+    {
+      name: "7 seasons Apartment",
+      rating: "3.7",
+      img: "https://media.istockphoto.com/id/1299710067/photo/double-bedroom-with-sea-view.jpg?s=612x612&w=0&k=20&c=LPNC-aqrsOsgxU8eqPcR38ACIOIjqAmh0VSKclIa2gs=",
+      reviews: 2880,
+      type: "Villas",
+      location: "CZech Republic, Praha",
+    },
+    {
+      name: "Stare Miatro",
+      rating: "4.9",
+      img: "https://media.istockphoto.com/id/1334117383/photo/3d-digital-rendering-of-a-luxury-hotel-suite.jpg?s=612x612&w=0&k=20&c=DfRDGXeTNwlZhiA0-ZTWaGI-4UfeivMN9ASAEDf06LQ=",
+      reviews: 4000,
+      type: "Apartment",
+      location: "Old Town, Poland",
+    },
+    {
+      name: "7 seasons Apartment",
+      rating: "3.7",
+      img: "https://media.istockphoto.com/id/1299710067/photo/double-bedroom-with-sea-view.jpg?s=612x612&w=0&k=20&c=LPNC-aqrsOsgxU8eqPcR38ACIOIjqAmh0VSKclIa2gs=",
+      reviews: 2880,
+      type: "Villas",
+      location: "CZech Republic, Praha",
+    },
+    {
+      name: "Stare Miatro",
+      rating: "4.9",
+      img: "https://media.istockphoto.com/id/1334117383/photo/3d-digital-rendering-of-a-luxury-hotel-suite.jpg?s=612x612&w=0&k=20&c=DfRDGXeTNwlZhiA0-ZTWaGI-4UfeivMN9ASAEDf06LQ=",
+      reviews: 4000,
+      type: "Apartment",
+      location: "Old Town, Poland",
+    },
+    {
+      name: "Leman Locke",
+      rating: "2.9",
+      img: "https://media.istockphoto.com/id/1300135335/photo/luxurious-bedroom-interior-at-nigh-with-messy-bed-leather-armchairs-closet-and-garden-view.jpg?s=612x612&w=0&k=20&c=3tFjNfMis-qELQ04hUmiG3W0i-5d7jBjaOP5YtB4sIw=",
+      reviews: 5680,
+      type: "Resorts",
+      location: "Tower Hamlets, UK",
+    },
+  ],
+  Villas: [
+    {
+      name: "7 seasons Apartment",
+      rating: "3.7",
+      img: "https://media.istockphoto.com/id/1299710067/photo/double-bedroom-with-sea-view.jpg?s=612x612&w=0&k=20&c=LPNC-aqrsOsgxU8eqPcR38ACIOIjqAmh0VSKclIa2gs=",
+      reviews: 2880,
+      type: "Villas",
+      location: "CZech Republic, Praha",
+    },
+    {
+      name: "Stare Miatro",
+      rating: "4.9",
+      img: "https://media.istockphoto.com/id/1334117383/photo/3d-digital-rendering-of-a-luxury-hotel-suite.jpg?s=612x612&w=0&k=20&c=DfRDGXeTNwlZhiA0-ZTWaGI-4UfeivMN9ASAEDf06LQ=",
+      reviews: 4000,
+      type: "Apartment",
+      location: "Old Town, Poland",
+    },
+    {
+      name: "Stare Miatro",
+      rating: "5.9",
+      img: "https://plus.unsplash.com/premium_photo-1661962964017-b985533e1f45?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8aG90ZWxzJTIwcm9vbXN8ZW58MHx8MHx8fDA%3D",
+      reviews: 2680,
+      type: "Apartment",
+      location: "Old Town, Poland",
+    },
+    {
+      name: "Leman Locke",
+      rating: "2.9",
+      img: "https://media.istockphoto.com/id/1300135335/photo/luxurious-bedroom-interior-at-nigh-with-messy-bed-leather-armchairs-closet-and-garden-view.jpg?s=612x612&w=0&k=20&c=3tFjNfMis-qELQ04hUmiG3W0i-5d7jBjaOP5YtB4sIw=",
+      reviews: 5680,
+      type: "Resorts",
+      location: "Tower Hamlets, UK",
+    },
+    {
+      name: "7 seasons Apartment",
+      rating: "3.7",
+      img: "https://media.istockphoto.com/id/1299710067/photo/double-bedroom-with-sea-view.jpg?s=612x612&w=0&k=20&c=LPNC-aqrsOsgxU8eqPcR38ACIOIjqAmh0VSKclIa2gs=",
+      reviews: 2880,
+      type: "Villas",
+      location: "CZech Republic, Praha",
+    },
+    {
+      name: "Stare Miatro",
+      rating: "4.9",
+      img: "https://media.istockphoto.com/id/1334117383/photo/3d-digital-rendering-of-a-luxury-hotel-suite.jpg?s=612x612&w=0&k=20&c=DfRDGXeTNwlZhiA0-ZTWaGI-4UfeivMN9ASAEDf06LQ=",
+      reviews: 4000,
+      type: "Apartment",
+      location: "Old Town, Poland",
+    },
+    {
+      name: "Leman Locke",
+      rating: "2.9",
+      img: "https://media.istockphoto.com/id/1300135335/photo/luxurious-bedroom-interior-at-nigh-with-messy-bed-leather-armchairs-closet-and-garden-view.jpg?s=612x612&w=0&k=20&c=3tFjNfMis-qELQ04hUmiG3W0i-5d7jBjaOP5YtB4sIw=",
+      reviews: 5680,
+      type: "Resorts",
+      location: "Tower Hamlets, UK",
+    },
+  ],
+  Cottages: [
+    {
+      name: "Stare Miatro",
+      rating: "5.9",
+      img: "https://plus.unsplash.com/premium_photo-1661962964017-b985533e1f45?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8aG90ZWxzJTIwcm9vbXN8ZW58MHx8MHx8fDA%3D",
+      reviews: 2680,
+      type: "Apartment",
+      location: "Old Town, Poland",
+    },
+    {
+      name: "Leman Locke",
+      rating: "2.9",
+      img: "https://media.istockphoto.com/id/1300135335/photo/luxurious-bedroom-interior-at-nigh-with-messy-bed-leather-armchairs-closet-and-garden-view.jpg?s=612x612&w=0&k=20&c=3tFjNfMis-qELQ04hUmiG3W0i-5d7jBjaOP5YtB4sIw=",
+      reviews: 5680,
+      type: "Resorts",
+      location: "Tower Hamlets, UK",
+    },
+    {
+      name: "7 seasons Apartment",
+      rating: "3.7",
+      img: "https://media.istockphoto.com/id/1299710067/photo/double-bedroom-with-sea-view.jpg?s=612x612&w=0&k=20&c=LPNC-aqrsOsgxU8eqPcR38ACIOIjqAmh0VSKclIa2gs=",
+      reviews: 2880,
+      type: "Villas",
+      location: "CZech Republic, Praha",
+    },
+    {
+      name: "Stare Miatro",
+      rating: "4.9",
+      img: "https://media.istockphoto.com/id/1334117383/photo/3d-digital-rendering-of-a-luxury-hotel-suite.jpg?s=612x612&w=0&k=20&c=DfRDGXeTNwlZhiA0-ZTWaGI-4UfeivMN9ASAEDf06LQ=",
+      reviews: 4000,
+      type: "Apartment",
+      location: "Old Town, Poland",
+    },
+  ],
+  "Vacation Homes": [
+    {
+      name: "Stare Miatro",
+      rating: "5.9",
+      img: "https://plus.unsplash.com/premium_photo-1661962964017-b985533e1f45?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8aG90ZWxzJTIwcm9vbXN8ZW58MHx8MHx8fDA%3D",
+      reviews: 2680,
+      type: "Apartment",
+      location: "Old Town, Poland",
+    },
+    {
+      name: "Leman Locke",
+      rating: "2.9",
+      img: "https://media.istockphoto.com/id/1300135335/photo/luxurious-bedroom-interior-at-nigh-with-messy-bed-leather-armchairs-closet-and-garden-view.jpg?s=612x612&w=0&k=20&c=3tFjNfMis-qELQ04hUmiG3W0i-5d7jBjaOP5YtB4sIw=",
+      reviews: 5680,
+      type: "Resorts",
+      location: "Tower Hamlets, UK",
+    },
+    {
+      name: "7 seasons Apartment",
+      rating: "3.7",
+      img: "https://media.istockphoto.com/id/1299710067/photo/double-bedroom-with-sea-view.jpg?s=612x612&w=0&k=20&c=LPNC-aqrsOsgxU8eqPcR38ACIOIjqAmh0VSKclIa2gs=",
+      reviews: 2880,
+      type: "Villas",
+      location: "CZech Republic, Praha",
+    },
+    {
+      name: "Stare Miatro",
+      rating: "4.9",
+      img: "https://media.istockphoto.com/id/1334117383/photo/3d-digital-rendering-of-a-luxury-hotel-suite.jpg?s=612x612&w=0&k=20&c=DfRDGXeTNwlZhiA0-ZTWaGI-4UfeivMN9ASAEDf06LQ=",
+      reviews: 4000,
+      type: "Apartment",
+      location: "Old Town, Poland",
+    },
+    {
+      name: "7 seasons Apartment",
+      rating: "3.7",
+      img: "https://media.istockphoto.com/id/1299710067/photo/double-bedroom-with-sea-view.jpg?s=612x612&w=0&k=20&c=LPNC-aqrsOsgxU8eqPcR38ACIOIjqAmh0VSKclIa2gs=",
+      reviews: 2880,
+      type: "Villas",
+      location: "CZech Republic, Praha",
+    },
+    {
+      name: "Stare Miatro",
+      rating: "4.9",
+      img: "https://media.istockphoto.com/id/1334117383/photo/3d-digital-rendering-of-a-luxury-hotel-suite.jpg?s=612x612&w=0&k=20&c=DfRDGXeTNwlZhiA0-ZTWaGI-4UfeivMN9ASAEDf06LQ=",
+      reviews: 4000,
+      type: "Apartment",
+      location: "Old Town, Poland",
+    },
+    {
+      name: "Leman Locke",
+      rating: "2.9",
+      img: "https://media.istockphoto.com/id/1300135335/photo/luxurious-bedroom-interior-at-nigh-with-messy-bed-leather-armchairs-closet-and-garden-view.jpg?s=612x612&w=0&k=20&c=3tFjNfMis-qELQ04hUmiG3W0i-5d7jBjaOP5YtB4sIw=",
+      reviews: 5680,
+      type: "Resorts",
+      location: "Tower Hamlets, UK",
+    },
+  ],
+  "Serviced Apartments": [
+    {
+      name: "Stare Miatro",
+      rating: "5.9",
+      img: "https://plus.unsplash.com/premium_photo-1661962964017-b985533e1f45?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8aG90ZWxzJTIwcm9vbXN8ZW58MHx8MHx8fDA%3D",
+      reviews: 2680,
+      type: "Apartment",
+      location: "Old Town, Poland",
+    },
+  ],
+  Hostels: [
+    {
+      name: "Stare Miatro",
+      rating: "5.9",
+      img: "https://plus.unsplash.com/premium_photo-1661962964017-b985533e1f45?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8aG90ZWxzJTIwcm9vbXN8ZW58MHx8MHx8fDA%3D",
+      reviews: 2680,
+      type: "Apartment",
+      location: "Old Town, Poland",
+    },
+  ],
+  Motels: [
+    {
+      name: "Leman Locke",
+      rating: "2.9",
+      img: "https://media.istockphoto.com/id/1300135335/photo/luxurious-bedroom-interior-at-nigh-with-messy-bed-leather-armchairs-closet-and-garden-view.jpg?s=612x612&w=0&k=20&c=3tFjNfMis-qELQ04hUmiG3W0i-5d7jBjaOP5YtB4sIw=",
+      reviews: 5680,
+      type: "Resorts",
+      location: "Tower Hamlets, UK",
+    },
+    {
+      name: "Stare Miatro",
+      rating: "5.9",
+      img: "https://plus.unsplash.com/premium_photo-1661962964017-b985533e1f45?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8aG90ZWxzJTIwcm9vbXN8ZW58MHx8MHx8fDA%3D",
+      reviews: 2680,
+      type: "Apartment",
+      location: "Old Town, Poland",
+    },
+  ],
+  "Guest Homes": [
+    {
+      name: "Stare Miatro",
+      rating: "5.9",
+      img: "https://plus.unsplash.com/premium_photo-1661962964017-b985533e1f45?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8aG90ZWxzJTIwcm9vbXN8ZW58MHx8MHx8fDA%3D",
+      reviews: 2680,
+      type: "Apartment",
+      location: "Old Town, Poland",
+    },
+  ],
+  "B & B's": [
+    {
+      name: "Leman Locke",
+      rating: "2.9",
+      img: "https://media.istockphoto.com/id/1300135335/photo/luxurious-bedroom-interior-at-nigh-with-messy-bed-leather-armchairs-closet-and-garden-view.jpg?s=612x612&w=0&k=20&c=3tFjNfMis-qELQ04hUmiG3W0i-5d7jBjaOP5YtB4sIw=",
+      reviews: 5680,
+      type: "Resorts",
+      location: "Tower Hamlets, UK",
+    },
+    {
+      name: "Stare Miatro",
+      rating: "5.9",
+      img: "https://plus.unsplash.com/premium_photo-1661962964017-b985533e1f45?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8aG90ZWxzJTIwcm9vbXN8ZW58MHx8MHx8fDA%3D",
+      reviews: 2680,
+      type: "Apartment",
+      location: "Old Town, Poland",
+    },
+  ],
+};

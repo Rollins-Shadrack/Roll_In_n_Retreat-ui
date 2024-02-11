@@ -13,6 +13,12 @@ module.exports = {
     },
     extend: {
       colors: {
+        brandShell: '#CBA688',
+        brandSunset: '#935430',
+        brandFog: "#EFEFEF",
+        brandMist: "#90A3A7",
+        brandTide: "#395159",
+        brandMidnight:"#23303D",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -46,11 +52,6 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        neutralSilver: "#F5F7FA",
-        neutralDGrey: "#4D4D4D",
-        brandPrimary: "#4CAF4F",
-        neutralGrey: "#717171",
-        gray900: "#18191F",
       },
       borderRadius: {
         lg: "var(--radius)",

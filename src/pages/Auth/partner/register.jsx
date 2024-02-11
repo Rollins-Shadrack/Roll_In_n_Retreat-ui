@@ -30,7 +30,7 @@ const register = () => {
   const [validateEmail] = useValidateEmailMutation();
   const [onboard, { isLoading, error }] = useOnboardMutation();
   const location = useLocation();
-  const from = location.state?.from || { pathname: "auth/confirmation-template" };
+  const from = location.state?.from || { pathname: "/auth/confirmation-template" };
   const navigate = useNavigate();
   const form = useForm({
     resolver: yupResolver(onBoardingSchema),

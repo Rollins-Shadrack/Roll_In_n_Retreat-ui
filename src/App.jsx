@@ -45,6 +45,10 @@ function App() {
             <Route path="profile" element={<PartnerProfile />} />
           </Route>
 
+          <Route path="dashboard" element={<PartnerLayout />}>
+            <Route index element={<PartnerDashboard />} />
+          </Route>
+
           {/* Private routes */}
           {/* Required Auth element is not yet complete */}
           <Route element={<RequiredAuth allowedRoles={[Roles.Staff]} />}>

@@ -6,14 +6,15 @@ import { ChevronRight, MapPin, PhoneCall, Instagram, Facebook, Twitter } from "l
 
 const index = () => {
   return (
-    <footer role="contentinfo" className="py-10 bg-white">
+    <footer role="contentinfo" className="py-10 bg-brandFog ">
       <div className="container px-4 mx-auto">
         <div className="block lg:flex gap-20 mb-10 pb-10">
           <div className="w-full lg:w-4/12 mb-10 lg:mb-0">
             <Link href="/" className="mb-4 inline-block">
-              <img src={logo} alt="" className="w-[100px] inline-block items-center" /> <span className="text-[#263238] font-bold">Roll In & Retreat </span>
+              <img src={logo} alt="" className="w-[100px] inline-block items-center" /> <span className=" font-bold">Roll In & Retreat </span>
             </Link>
             <p className="leading-relaxed mb-7 text-base">{footerContent.about.description}</p>
+
             <p>
               <Link href={footerContent.about.cta.href} className="flex space-x-2 outline-none items-center font-semibold text-primary">
                 <span>{footerContent.about.cta.label}</span>
@@ -64,7 +65,7 @@ const index = () => {
             </ul>
           </div>
         </div>
-        <div className="text-center  border-t border-gray-200">
+        <div className="text-center  border-t border-brandSunset">
           <p>
             {footerContent.copyright.labelOne}
             {"  "} {footerContent.copyright.labelTwo}
