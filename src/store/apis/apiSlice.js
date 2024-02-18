@@ -20,31 +20,35 @@ const baseQueryWithReauth = async (args, api, extraOptions) => {
 
   if (result?.error?.originalStatus === 403) {
     console.log("sending refresh token");
-    const refreshResult = await baseQuery({
-      url: endpoints.auth.refresh,
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
+    const refreshResult = await baseQuery(
+      {
+        url: endpoints.auth.refresh(),
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: {
+          refreshToken: api.getState().auth?.refreshToken ?? null,
+        },
       },
-      body: {
-        refreshToken: api.getState().auth?.refreshToken ?? null,
-      },
-    }, api, extraOptions);
+      api,
+      extraOptions
+    );
 
-      if (refreshResult?.data) {
-          api.dispatch(setCredentials(refreshResult.data));
+    if (refreshResult?.data) {
+      api.dispatch(setCredentials(refreshResult.data));
 
-          //send the original query then:
-          result = await baseQuery(args, api, extraOptions);
-      } else {
-          api.dispatch(logOut());
-      }
+      //send the original query then:
+      result = await baseQuery(args, api, extraOptions);
+    } else {
+      api.dispatch(logOut());
     }
-    return result;
+  }
+  return result;
 };
 
 export const apiSlice = createApi({
-    baseQuery: baseQueryWithReauth,
-    tagTypes: [],
-    endpoints:() =>({})
-})
+  baseQuery: baseQueryWithReauth,
+  tagTypes: [],
+  endpoints: () => ({}),
+});

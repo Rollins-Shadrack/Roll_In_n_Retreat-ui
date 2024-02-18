@@ -35,22 +35,24 @@ const index = ({user}) => {
           </a>
 
           {/* buttons on large  devices */}
-          <div className="gap-5 inline-flex">
+          <div className="gap-2 inline-flex">
             <Link className="space-x-2 cursor-pointer" to="business">
-              <Button variant="outline" className="py-2 px-4 transition-all duration-300 rounded hover:bg-neutralDGrey bg-brandSunset text-brandFog">
-                For Business
+              <Button
+                variant="outline"
+                className="md:py-2 md:px-4 transition-all duration-300 rounded hover:bg-neutralDGrey bg-brandSunset text-brandFog">
+                Property Listing
               </Button>
             </Link>
 
             {!user && (
-              <Link className="md:flex hidden space-x-12 cursor-pointer" to="auth">
-                <Button className="py-2 px-4 transition-all duration-300 rounded text-brandSunset border border-brandSunset hover:bg-brandShell hover:text-brandSunset ">
-                  Login / Join
+              <Link className="space-x-2 cursor-pointer" to="auth">
+                <Button className="md:py-2 md:px-4 transition-all duration-300 rounded text-brandSunset border border-brandSunset hover:bg-brandShell hover:text-brandSunset text-xs md:text-base ">
+                  Login / Register
                 </Button>
               </Link>
             )}
 
-            <UserNav user={user} />
+            {user && <UserNav />}
           </div>
         </div>
       </nav>

@@ -15,8 +15,8 @@ import { onBoardingSchema } from "@/lib/validations/PartnerSchema";
 import { Button } from "@/components/ui/button";
 import ReCAPTCHA from "react-google-recaptcha";
 import { recaptchaSiteKey } from "@/constants/globalConstants";
-import ErrorMessageAlert from "@/components/ErrorMessageAlert";
 import { useLocation, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const register = () => {
   const [isBusinessValidating, setIsBusinessValidating] = useState(false);
@@ -89,10 +89,10 @@ const register = () => {
     await onboard(values)
       .unwrap()
       .then(() => {
-        navigate(from, {replace:true})
+        navigate(from, { replace: true });
       })
       .catch((error) => {
-        console.log(error);
+        toast.error(error.data.message || error.message);
       });
   }
   return (
@@ -102,7 +102,6 @@ const register = () => {
           <p className="text-2xl font-bold text-black">Tell us about your business</p>
           <p className="text-sm text-gray-500">Enter your business name and contact details</p>
         </div>
-        <ErrorMessageAlert error={error} />
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
             <div className="grid grid-cols-2 gap-5">

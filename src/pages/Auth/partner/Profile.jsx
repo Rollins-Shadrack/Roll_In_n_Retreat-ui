@@ -12,25 +12,27 @@ import { useForm } from "react-hook-form";
 import ReCAPTCHA from "react-google-recaptcha";
 import { recaptchaSiteKey } from "@/constants/globalConstants";
 import { Button } from "@/components/ui/button";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useConfirmPartnerMutation } from "@/store/apis/auth.api";
-import ErrorMessageAlert from "@/components/ErrorMessageAlert";
+import { toast } from "react-toastify";
 
 const Profile = () => {
-  const [confirmPartner, {isLoading, error}] = useConfirmPartnerMutation()
-  const [isPasswordVisible, setIsPasswordVisible] = useState(false)
-  const location = useLocation()
+  const [confirmPartner, { isLoading, error }] = useConfirmPartnerMutation();
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const from = location.state?.from || { pathname: "/onboard/login" };
   const queryParams = new URLSearchParams(location.search);
-  const token = queryParams.get("token")
+  const token = queryParams.get("token");
   const form = useForm({
     resolver: yupResolver(AdditionalOnBoardingDataSchema),
     defaultValues: {
-      token:token || "",
+      token: token || "",
       staffCount: "",
-     password:"",
+      password: "",
       partnerAddress: {
         addressLine1: "",
-        postalCode: ""
+        postalCode: "",
       },
       capVal: "",
     },
@@ -38,11 +40,13 @@ const Profile = () => {
   });
 
   async function onSubmit(values) {
-    await confirmPartner(values).unwrap(() => {
-      
-    }).catch(error => {
-      console.log(error)
-    })
+    await confirmPartner(values)
+      .unwrap().then((response) => {
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        toast.error(error.data.message || error.message);
+      });
   }
   return (
     <div className={cn("w-4/5 mx-auto")}>
@@ -51,7 +55,6 @@ const Profile = () => {
           <p className="text-2xl font-bold text-black">Complete Your Business Profile</p>
           <p className="text-sm text-gray-500">Provide essential details about your staff count and location.</p>
         </div>
-        <ErrorMessageAlert error={error}/>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
             <FormField
@@ -151,7 +154,7 @@ const Profile = () => {
                 )}
               />
             </div>
-            <Button  variant="outline" className="px-5 bg-black text-white">
+            <Button variant="outline" className="px-5 bg-black text-white">
               Submit <Send className="h-4 w-4 ml-3" />
             </Button>
           </form>

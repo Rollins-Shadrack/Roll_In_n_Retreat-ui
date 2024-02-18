@@ -7,9 +7,10 @@ import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { useRegisterMutation } from "@/store/apis/auth.api";
-import ErrorMessageAlert from "@/components/ErrorMessageAlert";
 import { useLocation, useNavigate } from "react-router-dom";
 import { UserPlus } from "lucide-react";
+import { toast } from "react-toastify";
+
 
 const register = () => {
   const [register, { isLoading, error }] = useRegisterMutation()
@@ -31,7 +32,7 @@ const register = () => {
     await register(values).unwrap().then((response) => {
       navigate(from, {replace:true})
     }).catch(error => {
-      console.log(error);
+      toast.error(error.data.message || error.message);
     })
   }
   return (
@@ -51,7 +52,6 @@ const register = () => {
           </div>
 
           <div class=" my-2 text-base  font-medium">or sign up with email</div>
-          <ErrorMessageAlert error={error} />
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 w-full">
               <div className="md:flex md:space-x-3">

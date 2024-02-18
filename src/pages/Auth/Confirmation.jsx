@@ -5,22 +5,21 @@ import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import ErrorMessageAlert from "@/components/ErrorMessageAlert";
 import { useConfirmUserMutation, useResetPasswordMutation } from "@/store/apis/auth.api";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Eye, EyeOff } from "lucide-react";
+import { toast } from "react-toastify";
 
 const Confirmation = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [confirmUser, { isLoading, error }] = useConfirmUserMutation();
   const [resetPassword, { isLoading: loading, error: resetError }] = useResetPasswordMutation();
   const location = useLocation();
-  const navigate = useNavigate;
+  const navigate = useNavigate();
   const from = location.state?.from || { pathname: "/auth/users" };
   const queryParams = new URLSearchParams(location.search);
   const token = queryParams.get("token");
   const email = queryParams.get("email");
-  console.log(email);
   const form = useForm({
     resolver: yupResolver(UserConfirmation),
     defaultValues: {
@@ -35,14 +34,22 @@ const Confirmation = () => {
   async function onSubmit(values) {
     if (token) {
       await confirmUser(values)
-        .unwrap().then(() => {
+        .unwrap()
+        .then(() => {
           navigate(from, { replace: true });
+        })
+        .catch((error) => {
+          toast.error(error.data.message || error.message);
         });
     }
     if (email) {
       await resetPassword(values)
-        .unwrap().then(() => {
+        .unwrap()
+        .then((response) => {
           navigate(from, { replace: true });
+        })
+        .catch((error) => {
+          toast.error(error.data.message || error.message);
         });
     }
   }
@@ -55,7 +62,6 @@ const Confirmation = () => {
             Thank you for registering with us. To complete the registration process, please set your password and confirm it below.
           </p>
         </div>
-        <ErrorMessageAlert error={error || resetError} />
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 w-4/5">
             <FormField

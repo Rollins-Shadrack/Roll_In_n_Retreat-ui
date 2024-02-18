@@ -6,8 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { useForgotPasswordMutation } from '@/store/apis/auth.api';
-import ErrorMessageAlert from '@/components/ErrorMessageAlert';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const index = () => {
   const [forgotPassword, { isLoading, error }] = useForgotPasswordMutation();
@@ -25,6 +25,8 @@ const index = () => {
     async function onSubmit(values) {
       await forgotPassword(values).unwrap().then(() => {
         navigate(from, { replace: true });
+        }).catch(error =>{
+          toast.error(error?.message || error?.data?.message)
         })
     }
   return (
@@ -33,7 +35,6 @@ const index = () => {
         <h1 className="text-2xl font-semibold">Forgot Password?</h1>
         <p className="text-base ">Recover your account by resetting your password.</p>
       </div>
-<ErrorMessageAlert error={error}/>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 w-full">
           <FormField

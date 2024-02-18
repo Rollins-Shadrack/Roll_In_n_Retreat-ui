@@ -11,8 +11,8 @@ import { useLoginMutation } from "@/store/apis/auth.api";
 import { useDispatch } from "react-redux";
 import { setCredentials } from "@/store/features/authSlice";
 import { useLocation, useNavigate } from "react-router-dom";
-import ErrorMessageAlert from "@/components/ErrorMessageAlert";
 import { Eye, EyeOff, LogIn } from "lucide-react";
+import { toast } from "react-toastify";
 
 const login = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
@@ -39,10 +39,10 @@ const login = () => {
           navigate(from, { replace: true });
         })
         .catch((error) => {
-          console.log(error);
+          toast.error(error.data.message ||  error.message)
         });
     } catch (error) {
-      console.log(error);
+      toast.error(error.data.message || error.message);
     }
   }
   return (
@@ -61,7 +61,6 @@ const login = () => {
         </div>
 
         <div class="my-3 text-base  font-medium">or sign in with email</div>
-        <ErrorMessageAlert error={error} />
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 w-full">
             <FormField

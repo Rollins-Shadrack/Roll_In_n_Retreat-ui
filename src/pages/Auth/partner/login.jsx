@@ -10,7 +10,8 @@ import { useDispatch } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Eye, EyeOff } from "lucide-react";
 import { useLoginPartnerMutation } from "@/store/apis/auth.api";
-import ErrorMessageAlert from "@/components/ErrorMessageAlert";
+import { setCredentials } from "@/store/features/authSlice";
+import { toast } from "react-toastify";
 
 const login = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
@@ -37,16 +38,17 @@ const login = () => {
           navigate(from, { replace: true });
         })
         .catch((error) => {
-          console.log(error);
+          console.log(error)
+          toast.error(error.data.message || error.message);
         });
     } catch (error) {
-      console.log(error);
+      toast.error(error.data.message || error.message);
     }
   }
   return (
     <div className="w-4/5">
       <div className="flex flex-col items-center">
-        <div className="my-5 w-full flex justify-between items-center">
+        <div className="my-5 w-full md:flex  justify-between items-center">
           <div className="">
             <h1 className="text-2xl font-semibold">Welcome Back!</h1>
             <p className="text-base ">Sign in to access your account</p>
@@ -55,7 +57,6 @@ const login = () => {
             Create Account
           </Link>
         </div>
-        <ErrorMessageAlert error={error} />
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 w-full">
             <FormField
