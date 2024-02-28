@@ -40,11 +40,11 @@ const UserNav = () => {
         <DropdownMenuContent className="w-56 mt-5 mr-5">
           <DropdownMenuLabel>My Account</DropdownMenuLabel>
           <DropdownMenuSeparator />
-          <DropdownMenuItem>
-            <Link to="/profile">
+          <Link to="/user/profile">
+            <DropdownMenuItem>
               <p className="">Profile</p>
-            </Link>
-          </DropdownMenuItem>
+            </DropdownMenuItem>
+          </Link>
           <DropdownMenuItem onClick={handleLogout}>
             Log out
             <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>

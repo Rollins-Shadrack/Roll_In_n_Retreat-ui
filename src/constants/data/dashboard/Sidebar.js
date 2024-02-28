@@ -2,7 +2,10 @@ import {
   BadgePercent,
   BedDouble,
   BellRing,
+  CalendarClock,
   CalendarDays,
+  CreditCard,
+  HelpCircle,
   LayoutDashboard,
   Library,
   ListChecks,
@@ -10,8 +13,8 @@ import {
   MessageSquareWarning,
   Settings,
   TrendingUp,
-  UserCog,
   Users,
+  UsersRound,
 } from "lucide-react";
 export const menu = [
   { name: "Dashboard", link: "/dashboard", icon: LayoutDashboard },
@@ -26,5 +29,13 @@ export const menu = [
   { name: "Promotions", link: "/promotions", icon: BadgePercent },
   { name: "Complains", link: "/complains", icon: MessageSquareWarning },
   { name: "Settings", link: "/settings", icon: Settings },
-  { name: "Profile", link: "/profile", icon: UserCog },
+];
+
+export const staffMemberResources = [
+  { name: "Tasks and Calendar", link: "/staff/tasks", icon: CalendarClock },
+  { name: "Reservation", link: "/reservation", icon: CalendarDays },
+  { name: "Room Maintainance", link: "/staff/rooms", icon: BedDouble },
+  { name: "Billing and Invoices", link: "/staff/invoices", icon: CreditCard },
+  { name: "Team Members", link: "/staff/team", icon: UsersRound },
+  { name: "Help and Complains", link: "/staff/help", icon: HelpCircle },
 ];

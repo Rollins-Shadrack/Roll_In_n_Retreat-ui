@@ -28,7 +28,7 @@ const Featured = () => {
           </Fragment>
         ) : (
           featuredHotels.map((hotel, idx) => (
-            <Fragment>
+            <Fragment key={idx}>
               <Link to="">
                 <FeatureCard>
                   <FeatureCardHeader>

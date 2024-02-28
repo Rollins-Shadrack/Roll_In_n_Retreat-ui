@@ -3,7 +3,7 @@ import React from 'react'
 import {Navigate, Outlet, useLocation} from 'react-router-dom'
 
 const RequiredAuth = ({ allowedRoles = [] }) => {
-  const {isAuthenticated, userRole} = useAuth()
+  const {isAuthenticated, userRole, user} = useAuth()
   const location = useLocation();
   
   console.log("userRole in required auth", userRole)
@@ -14,7 +14,13 @@ const RequiredAuth = ({ allowedRoles = [] }) => {
   ) : isAuthenticated ? (
     <Navigate to="/unauthorized" state={{ from: location }} replace={true} />
   ) : (
-    <Navigate to="/onboard/login" state={{ from: location }} replace={true} />
+    <>
+      {userRole === "staff" ? (
+        <Navigate to="/onboard/login" state={{ from: location }} replace={true} />
+      ) : (
+        <Navigate to="/auth/users" state={{ from: location }} replace={true} />
+      )}
+    </>
   );
 }
 

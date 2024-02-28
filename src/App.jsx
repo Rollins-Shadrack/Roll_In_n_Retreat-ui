@@ -5,20 +5,28 @@ import MainLayout from "./layout/MainLayout";
 import AuthLayout from "./layout/AuthLayout";
 import AuthPartnerLayout from "./layout/AuthPathnerLayout";
 import UsersAuth from "@/pages/Auth/users";
+import UserProfile from "@/pages/Market/profile/index"
 import PartnerOnboarding from "@/pages/Auth/partner/register";
 import PartnerProfile from "@/pages/Auth/partner/Profile";
 import PartnerLogin from "@/pages/Auth/partner/login";
 import ForgotPassword from "@/pages/Auth/forgot-password";
 import MarketPlaceLandingPage from "@/pages/Market/landing-page/index";
+import Property from "@/pages/Market/propertylisting";
 import MarketPlaceLayout from "./layout/MarketPlaceLayout";
 import RequiredAuth from "@/components/RequiredAuth";
 import { Roles } from "./constants/globalConstants";
 import PartnerLayout from "./layout/PartnerLayout";
 import PartnerDashboard from "@/pages/Partner/dashboard/index";
-import Reservation from "@/pages/Partner/Reservation"
+import Reservation from "@/pages/Partner/Reservation";
 import Rooms from "@/pages/Partner/Rooms";
-import Staff from "@/pages/Partner/Staff";
-import Analytics from '@/pages/Partner/Analytics'
+import StaffLayout from "@/pages/Partner/Staff/layout";
+import Staff from "@/pages/Partner/Staff/index";
+import StaffProfile from "@/pages/Partner/Staff/pages/Profile";
+import StaffTasks from '@/pages/Partner/Staff/pages/Tasks'
+import StaffHelp from "@/pages/Partner/Staff/pages/Help";
+import NewStaff from "@/pages/Partner/Staff/pages/NewStaff";
+import StaffTeamMembers from "@/pages/Partner/Staff/pages/Team";
+import Analytics from "@/pages/Partner/Analytics";
 import Reports from "@/pages/Partner/Reports";
 import Reviews from "@/pages/Partner/Reviews";
 import Notification from "@/pages/Partner/Notification";
@@ -30,7 +38,7 @@ import AuthPages from "@/pages/Auth/index";
 import Confirmation from "./pages/Auth/Confirmation";
 import ConfirmationTemplate from "./pages/Auth/components/ConfirmationTemplate";
 import ConfirmationMailTemplate from "./pages/Auth/forgot-password/ConfirmMailTemplate";
-
+import { useState } from "react";
 
 function App() {
   return (
@@ -42,6 +50,10 @@ function App() {
             {/* MarketPlace */}
             <Route path="/" element={<MarketPlaceLayout />}>
               <Route index element={<MarketPlaceLandingPage />} />
+              <Route path="property" element={<Property />} />
+              <Route path="user" element={<RequiredAuth allowedRoles={Roles.User} />}>
+                <Route path="profile" element={<UserProfile />} />
+              </Route>
             </Route>
 
             {/* Auth */}
@@ -60,12 +72,21 @@ function App() {
             </Route>
 
             {/* Private routes */}
+
+            {/* partner */}
             <Route element={<RequiredAuth allowedRoles={[Roles.Staff]} />}>
               <Route element={<PartnerLayout />}>
                 <Route path="dashboard" element={<PartnerDashboard />} />
                 <Route path="reservation" element={<Reservation />} />
                 <Route path="rooms" element={<Rooms />} />
-                <Route path="staff" element={<Staff />} />
+                <Route path="staff" element={<StaffLayout />}>
+                  <Route index element={<Staff />} />
+                  <Route path="new" element={<NewStaff />} />
+                  <Route path="profile" element={<StaffProfile />} />
+                  <Route path="help" element={<StaffHelp />} />
+                  <Route path="tasks" element={<StaffTasks />} />
+                  <Route path="team" element={<StaffTeamMembers />} />
+                </Route>
                 <Route path="analytics" element={<Analytics />} />
                 <Route path="reports" element={<Reports />} />
                 <Route path="guests" element={<Reviews />} />

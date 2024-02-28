@@ -36,7 +36,7 @@ const index = ({user}) => {
 
           {/* buttons on large  devices */}
           <div className="gap-2 inline-flex">
-            <Link className="space-x-2 cursor-pointer" to="business">
+            <Link className="space-x-2 cursor-pointer" to="property">
               <Button
                 variant="outline"
                 className="md:py-2 md:px-4 transition-all duration-300 rounded hover:bg-neutralDGrey bg-brandSunset text-brandFog">

@@ -11,17 +11,6 @@ import {
   DropdownMenuShortcut,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import {
-  AlertDialog,
-  AlertDialogAction,
-  AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
-  AlertDialogTrigger,
-} from "@/components/ui/alert-dialog";
 import { menu } from '@/constants/data/dashboard/Sidebar';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -51,9 +40,13 @@ const Header = ({ title }) => {
           </div>
         </div>
         <div className="bg-brandFog rounded-l-full text-brandSunset">
-          <div className="flex items-center space-x-3 px-5 py-2">
+          <Link to='/staff/profile' className="flex items-center space-x-3 px-5 py-2">
             <Avatar>
-              <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+              <AvatarImage
+                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZSUyMGltYWdlfGVufDB8fDB8fHww"
+                alt="@shadcn"
+                className="object-cover"
+              />
               <AvatarFallback>R&R</AvatarFallback>
             </Avatar>
             <div className="md:flex flex-col  hidden">
@@ -81,13 +74,15 @@ const Header = ({ title }) => {
                     ))}
                     <DropdownMenuItem onClick={handleLogout}>
                       Log Out
-                      <DropdownMenuShortcut><LogOut/></DropdownMenuShortcut>
+                      <DropdownMenuShortcut>
+                        <LogOut />
+                      </DropdownMenuShortcut>
                     </DropdownMenuItem>
                   </DropdownMenuGroup>
                 </DropdownMenuContent>
               </DropdownMenu>
             </div>
-          </div>
+          </Link>
         </div>
       </div>
     </div>
